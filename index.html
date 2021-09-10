@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/atom.js"></script>
+</head>
+<body>
+    <figure>
+        <div class="figure-content">
+            <div class="element-info">
+                <div class="initials"><span class="text-color">[</span><span>PH</span><span class="text-color">]</span></div>
+                <div class="name">Phosphorus<sup class="text-fade">19</sup></div>
+                <div class="latin text-fade">Phosphorus</div>
+            </div>
+            <div id="Atom">
+                <div class="nucleus"></div>
+                <div class="electrospheres"></div>
+            </div>
+        </div>
+    </figure>
+    <script>
+        window.addEventListener('load', () => {
+            kripton = new Atom(15)
+    
+            function renderElectronicLayers(selector, atom) {
+                const element = document.querySelector(selector)
+                const html = document.createElement('div')
+    
+                for (const index in atom.electronicDiagram) {
+                    const layer = atom.electronicDiagram[index]
+                    const layerLength = atom.shells[index]
+                    const electrosphere = document.createElement('div')
+    
+                    electrosphere.classList.add('electrosphere', `layer-${index}`)
+    
+                    if (layerLength)
+                        electrosphere.style.setProperty('--length', layerLength)
+                    else
+                        electrosphere.classList.add('empty-layer')
+    
+                    for (let i = 0; i < layerLength; i++) {
+                        const electron = document.createElement('div')
+    
+                        electron.classList.add('electron')
+                        electron.style.setProperty('--index', i)
+                        electrosphere.appendChild(electron)
+                    }
+    
+                    html.appendChild(electrosphere)
+                }
+    
+                element.innerHTML = html.innerHTML
+            }
+    
+            renderElectronicLayers("#Atom .electrospheres", kripton)
+        })
+    </script>
+</body>
+</html>

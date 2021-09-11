@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    kripton = new Atom(15)
+    kripton = new Atom(200)
 
     function renderElectronicLayers(selector, atom) {
         const element = document.querySelector(selector)

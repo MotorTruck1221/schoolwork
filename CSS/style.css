@@ -124,8 +124,8 @@ body {
       position: absolute; }
   
   .nucleus {
-    width: 40px;
-    height: 40px;
+    width: 10px;
+    height: 10px;
     background-color: #09F;
     border-radius: 50%;
     box-shadow: 0 0 100px 50px #242424;

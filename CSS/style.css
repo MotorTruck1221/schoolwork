@@ -1,0 +1,140 @@
+body {
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+.figure-content {
+    overflow: hidden;
+    background-color: #212121;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23242424' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  
+  .element-info {
+    position: absolute;
+    margin: 15px 0 0 20px;
+    color: #FFF;
+    font-size: 24px; }
+    .element-info .text-color {
+      color: #09F; }
+    .element-info .text-fade {
+      color: #9E9E9E; }
+    .element-info .initials {
+      font-size: 2em;
+      font-weight: bold; }
+    .element-info .name {
+      margin-top: 5px;
+      font-size: 1em; }
+    .element-info .latin {
+      font-size: .8em;
+      font-style: italic; }
+  
+  #Atom {
+    width: 300px;
+    height: 300px;
+    margin: 25px 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  
+  .electrospheres {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  
+  .electrosphere {
+    border: 2px solid #757575;
+    border-radius: 50%;
+    animation: 60s infinite linear; }
+    .electrosphere:nth-child(odd) {
+      animation-name: rotateA; }
+    .electrosphere:nth-child(even) {
+      animation-name: rotateB; }
+  
+  @keyframes rotateA {
+    from {
+      transform: rotate(360deg); } }
+  
+  @keyframes rotateB {
+    from {
+      transform: rotate(-360deg); } }
+    .electrosphere.layer-0 {
+      width: 90px;
+      height: 90px;
+      position: absolute; }
+      .electrosphere.layer-0.empty-layer {
+        opacity: 1.9; }
+    .electrosphere.layer-1 {
+      width: 125px;
+      height: 125px;
+      position: absolute; }
+      .electrosphere.layer-1.empty-layer {
+        opacity: 1.6; }
+    .electrosphere.layer-2 {
+      width: 160px;
+      height: 160px;
+      position: absolute; }
+      .electrosphere.layer-2.empty-layer {
+        opacity: 1.3; }
+    .electrosphere.layer-3 {
+      width: 195px;
+      height: 195px;
+      position: absolute; }
+      .electrosphere.layer-3.empty-layer {
+        opacity: 1; }
+    .electrosphere.layer-4 {
+      width: 230px;
+      height: 230px;
+      position: absolute; }
+      .electrosphere.layer-4.empty-layer {
+        opacity: 0.7; }
+    .electrosphere.layer-5 {
+      width: 265px;
+      height: 265px;
+      position: absolute; }
+      .electrosphere.layer-5.empty-layer {
+        opacity: 0.4; }
+    .electrosphere.layer-6 {
+      width: 300px;
+      height: 300px;
+      position: absolute; }
+      .electrosphere.layer-6.empty-layer {
+        opacity: 0.1; }
+  
+  .electron {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin: -1px;
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(360deg * var(--index) / var(--length))); }
+    .electron::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      margin: -8px;
+      border-radius: 50%;
+      border: 3px solid #212121;
+      background-color: #09F;
+      position: absolute; }
+  
+  .nucleus {
+    width: 40px;
+    height: 40px;
+    background-color: #09F;
+    border-radius: 50%;
+    box-shadow: 0 0 100px 50px #242424;
+    position: absolute; }
+    
+  .figure-content {
+    width: 600px;
+    height: 350px;
+    border: 1px solid #222;
+    border-radius: 2px;
+    user-select: none;
+    cursor: default; }
+  

@@ -5,7 +5,8 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center; 
 }
 .figure-content {
     overflow: hidden;
